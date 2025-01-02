@@ -39,9 +39,11 @@ python main.py --cfg configs/peptides-func-gin.yaml dataset.node_encoder_name At
 ```
 
 ## Running HyMN for counting substructures
-### Training
+
 ```
-python main.py --cfg configs/GPS/pcqm4m-GPS+RWSE.yaml
+cd counting_substructures
+wandb sweep wandb_sweep/counting.yaml
+wandb agent [...]
 ```
 
 

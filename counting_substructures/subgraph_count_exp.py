@@ -125,6 +125,7 @@ def run_exp(args, device, wandb_run=None):
         largest_component=True # whether to just looks at largest connected component
         name = 'random_sampling'
     elif args.colouring_scheme in ['indexsubgraph']:
+        pretransform = SubgraphTransform()
         largest_component=True
         name = 'subgraph_sampling'
 
