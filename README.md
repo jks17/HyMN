@@ -28,7 +28,7 @@ conda clean --all
 
 ### Running HyMN
 ```bash
-conda activate graphgps
+conda activate hymn
 
 # Running HyMN (GIN, T=1) with CSE on Peptides-func
 python main.py --cfg configs/peptides-func-gin.yaml dataset.node_encoder_name Atom+NodeCentrality model.type colour_gnn gnn.num_samples 2 gnn.layer_type gineconv wandb.use False
