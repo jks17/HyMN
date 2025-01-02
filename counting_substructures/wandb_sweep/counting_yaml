@@ -1,0 +1,83 @@
+method: grid
+metric:
+  goal: minimize
+  name: Metric/valid
+parameters:
+  averaging:
+    value: mean
+  batch_size:
+    value: 128
+  bn:
+    value: true
+  bn_between_convs:
+    value: false
+  colouring_scheme:
+    values:
+      - indexsubgraph
+      - indexrandom
+  emb_dim:
+    value: 32
+  encoding_scheme:
+    value: identity
+  epochs:
+    value: 250
+  gen_parameters:
+    value: 60-5_60-5_60-5_60-5
+  inject_colours:
+    value: false
+  jk:
+    value: false
+  layer:
+    value: colourcat_shared_gin
+  learning_rate:
+    value: 0.001
+  model:
+    value: ColourCatSharedGNN
+  multiplier:
+    value: 1
+  num_colours:
+    value: 1
+  num_layers:
+    value: 6
+  num_samples:
+    values:
+      - 1
+      - 5
+      - 10
+      - 15
+      - 20
+      - 25
+      - 30
+      - 35
+      - 40
+      - 45
+      - 50
+      - 55
+      - 60
+  predictor:
+    value: linear
+  readout:
+    value: mean
+  reset_eval_painters:
+    value: false
+  residual:
+    value: false
+  sample_aggregation:
+    value: none
+  scheduler:
+    value: false
+  seed:
+    values:
+      - 0
+      - 1
+      - 2
+  task:
+    values:
+      - tri
+      - cyc5
+      - tailed
+      - star
+      - cyc4
+      - path3
+      - path4
+program: subgraph_count_exp.py
