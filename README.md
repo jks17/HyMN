@@ -30,11 +30,11 @@ conda clean --all
 ```bash
 conda activate hymn
 
-# Running HyMN (GIN, T=1) with CSE on Peptides-func
-python main.py --cfg configs/peptides-func-gin.yaml dataset.node_encoder_name Atom+NodeCentrality model.type colour_gnn gnn.num_samples 2 gnn.layer_type gineconv wandb.use False
+# Running HyMN (GIN, T=2) with CSE on MolHiv
+python main.py --cfg configs/molhiv_with_cse.yaml dataset.node_encoder_name Atom+NodeCentrality gnn.num_samples 3 gnn.layer_type gineconv wandb.use False
 
-# Running HyMN (GIN, T=2) without CSE on Peptides-func.
-python main.py --cfg configs/peptides-func-gin.yaml dataset.node_encoder_name Atom model.type colour_gnn gnn.num_samples 3 gnn.layer_type gineconv wandb.use False
+# Running HyMN (GIN, T=5) without CSE on MolHiv.
+python main.py --cfg configs/molhiv_without_cse.yaml dataset.node_encoder_name Atom gnn.num_samples 6 gnn.layer_type gineconv wandb.use False
 
 ```
 

@@ -18,7 +18,7 @@ dataset:
 posenc_NodeCentrality:
   enable: True
   kernel:
-    times_func: range(1,21)
+    times_func: range(1,17)
   model: Linear
   dim_pe: 16
   raw_norm_type: BatchNorm
@@ -50,7 +50,7 @@ model:
   edge_decoding: dot
   graph_pooling: mean
 gnn:
-  num_samples: 2
+  num_samples: 3
   subgraph_pooling: sum
   head: mlp_graph
   layers_pre_mp: 0

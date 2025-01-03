@@ -1,16 +1,16 @@
 out_dir: results
-metric_best: ap
+metric_best: auc
 wandb:
   use: True
-  project: peptides-func
+  project: molbace
 dataset:
   format: OGB
-  name: peptides-functional
-  task: graph
+  name: ogbg-molbace
+  task: graph  
   task_type: classification_multilabel
   transductive: False
   node_encoder: True
-  node_encoder_name: Atom+NodeCentrality
+  node_encoder_name: Atom
   node_encoder_bn: False
   edge_encoder: True
   edge_encoder_name: Bond
@@ -20,7 +20,7 @@ posenc_NodeCentrality:
   kernel:
     times_func: range(1,21)
   model: Linear
-  dim_pe: 18
+  dim_pe: 16
   raw_norm_type: BatchNorm
 posenc_LapPE:
   enable: False
@@ -41,30 +41,32 @@ posenc_RWSE:
   raw_norm_type: BatchNorm
 train:
   mode: custom
-  batch_size: 200
+  batch_size: 32
   eval_period: 1
   ckpt_period: 100
 model:
   type: colour_gnn 
   loss_fun: cross_entropy
+  edge_decoding: dot
   graph_pooling: mean
 gnn:
-  num_samples: 2
+  num_samples: 3
   subgraph_pooling: mean
   head: mlp_graph
   layers_pre_mp: 0
-  layers_mp: 10
+  layers_mp: 8
   layers_post_mp: 3
-  dim_inner: 145
+  dim_inner: 300
   layer_type: gineconv
   act: gelu
   residual: True
-  dropout: 0.1 
+  dropout: 0.5
+  batchnorm: True
 optim:
   clip_grad_norm: True
   optimizer: adamW
-  weight_decay: 0.0
-  base_lr: 0.001
-  max_epoch: 250
+  weight_decay: 1e-5
+  base_lr: 0.0001
+  max_epoch: 100
   scheduler: cosine_with_warmup
   num_warmup_epochs: 5
