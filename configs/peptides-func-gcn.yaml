@@ -16,7 +16,7 @@ dataset:
   edge_encoder_name: Bond
   edge_encoder_bn: False
 posenc_NodeCentrality:
-  enable: False
+  enable: True
   kernel:
     times_func: range(1,21)
   model: Linear
@@ -33,7 +33,7 @@ posenc_LapPE:
   layers: 2
   raw_norm_type: none
 posenc_RWSE:
-  enable: True
+  enable: False
   kernel:
     times_func: range(1,21)
   model: Linear
