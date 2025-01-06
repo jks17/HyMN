@@ -31,10 +31,10 @@ conda clean --all
 conda activate hymn
 
 # Running HyMN (GIN, T=2) with CSE on MolHiv
-python main.py --cfg configs/molhiv_with_cse.yaml dataset.node_encoder_name Atom+NodeCentrality gnn.num_samples 3 gnn.layer_type gineconv wandb.use False
+python main.py --cfg configs/molhiv_with_cse.yaml gnn.num_samples 3 wandb.use False
 
 # Running HyMN (GIN, T=5) without CSE on MolHiv.
-python main.py --cfg configs/molhiv_without_cse.yaml dataset.node_encoder_name Atom gnn.num_samples 6 gnn.layer_type gineconv wandb.use False
+python main.py --cfg configs/molhiv_without_cse.yaml gnn.num_samples 6 wandb.use False
 
 Note: Number of samples is one extra as equals original + T
 
