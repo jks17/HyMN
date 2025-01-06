@@ -46,6 +46,9 @@ wandb sweep wandb_sweep/counting.yaml
 wandb agent [...]
 ```
 
+## Perturbation analysis in paper
+Jupyter Notebooks for the analysis in the paper on the amount of perturbation with node marking and how this is correlated with substructures can be found in the folder 'notebooks' (3.2 EFFECTIVE NODE MARKING).
+
 
 
 ### W&B logging
