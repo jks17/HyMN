@@ -63,6 +63,11 @@ To use W&B logging, set `wandb.use True` and change it to whatever else you like
 
 If you find this work useful, please cite our ArXiv paper:
 ```bibtex
-@article{
+@article{southern2025balancing,
+      title={Balancing Efficiency and Expressiveness: Subgraph GNNs with Walk-Based Centrality}, 
+      author={Joshua Southern and Yam Eitan and Guy Bar-Shalom and Michael Bronstein and Haggai Maron and Fabrizio Frasca},
+      year={2025},
+      journal={arXiv:2501.03113},
+      url={https://arxiv.org/abs/2501.03113}, 
 }
 ```
